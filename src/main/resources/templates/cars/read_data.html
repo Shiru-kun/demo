@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+ <!--===============================================================================================-->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/daterangepicker/daterangepicker.css">
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/css/util.css">
+	<link rel="stylesheet" type="text/css" href="form/css/main.css">
+<!--===============================================================================================-->
+
+	<title>Search Data</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Inventory</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" th:href="car">Car Registration <span class="sr-only">(current)</span></a>
+      </li>    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a th:href="search_car" class="btn btn-outline-success my-2 my-sm-0" type="submit"> <span class="glyphicon glyphicon-search"></span> Search</a>
+    </form>
+  </div>
+</nav>
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+		
+	<table class="table table-hover">
+	<tr>
+	
+	<thead>
+	
+	<th >Brand</th>
+	<th>Plate</th>
+	<th>operation</th>
+	</thead>
+	
+	</tr>
+	<tbody>
+	<tr th:each="car : ${cars}">
+	  
+	  <td scope="col"><span th:text="${car.brand}"></span></td>
+	  <td scope="col"><span th:text="${car.plate}"></span></td>
+      <td><a> delete</a> | <a > update</a>
+	</td>	
+	</tr>
+	</tbody>
+	</table>
+</div></div>
+<!--  https://youtu.be/lIgFe20dYq4 modal spring boot -->
+  <script src="bootstrap/js/jquery-3.3.1.slim.min.js"> </script>
+    <script src="bootstrap/js/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+ 
+</body>
+</html>

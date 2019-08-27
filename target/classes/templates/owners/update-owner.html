@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html  lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+
+<title>Update</title>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="form/css/util.css">
+	<link rel="stylesheet" type="text/css" href="form/css/main.css">
+<!--===============================================================================================-->
+
+</head>
+
+<body><nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">CarWash</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" th:href="owner">Owner Registration <span class="sr-only">(current)</span></a>
+      </li>    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a th:href="search_owner" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</a>
+    </form>
+  </div>
+</nav>
+<div class="container-contact100">
+		<div class="wrap-contact100">
+		
+<form action="#" th:action="@{/update_owner/{id}(id=${owner.id})}" th:object="${owner}" class="contact100-form" method="post">
+    <label class="label-input100" for="name">gender</label>
+    <input  class="input100"  type="text" th:field="*{gender}" id="gender" placeholder="gender">
+    <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+    <label class="label-input100" for="brand">brand</label>
+    <input class="input100"   type="text" th:field="*{age}" id="age" placeholder="age">
+    <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+    <label  class="label-input100" >description</label>
+    <input class="input100"  type="text" th:field="*{name}" id="name" placeholder="name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <input class="contact100-form-btn"  type="submit" value="Update" >   
+</form>
+</div></div>
+
+  <script src="bootstrap/js/jquery-3.3.1.slim.min.js"> </script>
+    <script src="bootstrap/js/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+
+	<title>Device Description</title>
+</head>
+
+<body>
+
+	Lista
+	
+	<table class="table table-hover">
+	<tr>
+	
+	<thead>
+	
+	<th >Type</th>
+	<th>Brand</th>
+	<th>Description</th>
+	
+	</thead>
+	
+	</tr>
+	<tbody>
+	<tr th:each="device : ${devs}">
+	  
+	  <td scope="col"><span th:text="${device.type}"></span></td>
+	  <td scope="col"><span th:text="${device.brand}"></span></td>
+	  <td scope="col"><span th:text="${device.Description}"></span></td>
+	
+	
+	</tr>
+	</tbody>
+	</table>
+
+  <script src="bootstrap/js/jquery-3.3.1.slim.min.js"> </script>
+    <script src="bootstrap/js/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
