@@ -1,4 +1,4 @@
-package com.mz.cth.model;
+package com.mz.cth.demo.model;
 
 import java.io.Serializable;
 

@@ -1,19 +1,20 @@
-package com.mz.cth.model;
+package com.mz.cth.demo.model;
 
-
-import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @Entity
-public class Device implements Serializable {
+public class Device {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String type;
+	private String brand;
+	private  String Description;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8900607513543641258L;
+	
 	public String getType() {
 		return type;
 	}
@@ -32,13 +33,7 @@ public class Device implements Serializable {
 
 	
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 	
-	private String type;
-	private String brand;
-	private  String Description;
 
 
 	public String getDescription() {
